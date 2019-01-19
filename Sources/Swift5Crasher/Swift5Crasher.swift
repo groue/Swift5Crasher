@@ -1,29 +1,29 @@
 protocol MutableFoo {
-    mutating func foo() throws
+    mutating func foo()
     mutating func didFoo()
 }
 
 extension MutableFoo {
-    mutating func foo() throws {
-        try performFoo()
+    mutating func foo() {
+        performFoo()
     }
     
-    mutating func performFoo() throws {
+    mutating func performFoo() {
         didFoo()
     }
 }
 
 protocol Foo: MutableFoo {
-    func foo() throws
+    func foo()
     func didFoo()
 }
 
 extension Foo {
-    func foo() throws {
-        try performFoo()
+    func foo() {
+        performFoo()
     }
     
-    func performFoo() throws {
+    func performFoo() {
         didFoo()
     }
 }
